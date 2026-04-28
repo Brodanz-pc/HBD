@@ -1,1 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Happy Birthday ✨"/>
+  <meta property="og:description" content="Ada surat kecil yang pengen gue sampaikan ke lu..." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Surat Buat Lu ✉️</title>
+  <style>
+    :root {
+      --bg1: #f4e9dc;
+      --bg2: #efe0cf;
+      --paper: rgba(255, 250, 244, 0.93);
+      --text: #3f2f27;
+      --accent: #a66a4a;
+      --accent2: #d89b73;
+      --gold: #b58b5d;
+      --shadow: 0 20px 60px rgba(80, 53, 36, 0.18);
+    }
 
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(216, 155, 115, 0.18), transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(120, 90, 70, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 90, 70, 0.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(900px, 100%);
+      border: 1px solid rgba(166, 106, 74, 0.18);
+      background: var(--paper);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 44px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(166,106,74,0.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .topline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(166,106,74,0.18);
+      font-size: 14px;
+      letter-spacing: 0.4px;
+    }
+
+    .badge {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      box-shadow: 0 0 0 6px rgba(166, 106, 74, 0.08);
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2.1rem, 6vw, 4.3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: #4b372d;
+    }
+
+    .name {
+      background: linear-gradient(135deg, var(--accent), #8b5e45, var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sub {
+      font-size: clamp(1rem, 2.2vw, 1.12rem);
+      line-height: 1.9;
+      max-width: 64ch;
+      margin: 18px 0 0;
+      opacity: 0.95;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .message {
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(166,106,74,0.12);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(116, 88, 128, 0.06);
+    }
+
+    .message p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      line-height: 1.95;
+    }
+
+    .message p:last-child { margin-bottom: 0; }
+
+    .quote {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      background: linear-gradient(90deg, rgba(166,106,74,0.08), rgba(216,155,115,0.12));
+      border-radius: 14px;
+      font-style: italic;
+    }
+
+    .side {
+      display: grid;
+      gap: 16px;
+      justify-items: center;
+    }
+
+    .orb {
+      width: min(100%, 280px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.35) 30%, transparent 31%),
+        radial-gradient(circle at 50% 50%, rgba(216, 155, 115, 0.65), rgba(166,106,74,0.55) 52%, rgba(255,255,255,0.1) 100%);
+      box-shadow: inset 0 0 40px rgba(255,255,255,0.26), 0 18px 40px rgba(118, 88, 128, 0.12);
+      animation: float 4.5s ease-in-out infinite;
+    }
+
+    .orb::before,
+    .orb::after {
+      content: "";
+      position: absolute;
+      inset: 18% 14%;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.34);
+      transform: rotate(20deg);
+    }
+
+    .orb::after {
+      inset: 10% 24%;
+      transform: rotate(-18deg);
+    }
+
+    .orb span {
+      font-size: clamp(3rem, 8vw, 5rem);
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.10));
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font: inherit;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+
+    button:hover { transform: translateY(-2px); }
+
+    .primary {
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #8b5e45);
+      box-shadow: 0 12px 24px rgba(166, 106, 74, 0.28);
+    }
+
+    .secondary {
+      background: rgba(255,255,255,0.72);
+      color: var(--text);
+      border: 1px solid rgba(166,106,74,0.16);
+    }
+
+    .tiny {
+      font-size: 13px;
+      opacity: 0.78;
+      margin-top: 14px;
+    }
+
+    .confetti {
+      position: fixed;
+      top: -12px;
+      width: 10px;
+      height: 18px;
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 999;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0.95;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+      .side { order: -1; }
+      h1 { font-size: clamp(2rem, 12vw, 3.8rem); }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="topline"><span class="badge"></span> Surat kecil buat lu — 29 April vibes</div>
+      <h1>Happy Birthday, <span class="name" id="name"></span> ✨</h1>
+
+      <div class="grid">
+        <div class="message">
+          <p>Selamat ulang tahun ya, Selly (sorry, selama ini gua gk tau nama lu).</p>
+          <p>Gua gak tau sekarang posisi kita masih sejauh apa atau sedeket apa, tapi gua masih inget dulu gua pernah minta ditemenin sama lu sampe dewasa.</p>
+          <p>Sekarang mungkin semuanya udah gak sesimpel itu. Kita bisa aja mulai asing, dan itu bikin gua kepikiran juga.</p>
+          <p>Tapi gua tetep pengen bilang, semoga di umur baru ini, hidup lu makin enak dijalanin, hati lu lebih ringan, dan lu tetep ketemu banyak hal baik ke depannya.</p>
+          <p>Kalau suatu saat kita bisa bertemu, gua bakal seneng. Kalau enggak juga, gua tetep doain yang terbaik buat lu.</p>
+          <div class="quote" id="quote">"Makasih ya, udah pernah jadi bagian dari hidup gua."</div>
+          <div class="tiny">From: Akhdan Yudhistira Adita</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const friendName = "Selly";
+    document.getElementById("name").textContent = friendName;
+
+   
+
+    const celebrateBtn = document.getElementById("celebrateBtn");
+    const changeTextBtn = document.getElementById("changeTextBtn");
+    const quoteEl = document.getElementById("quote");
+
+    function spawnConfetti() {
+      const colors = ["#a66a4a", "#d89b73", "#b58b5d", "#ffffff", "#f3d6c6"];
+      const count = 28;
+      for (let i = 0; i < count; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti";
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDuration = (2.8 + Math.random() * 2.8) + "s";
+        piece.style.opacity = 0.7 + Math.random() * 0.3;
+        piece.style.transform = `translateY(-20px) rotate(${Math.random() * 180}deg)`;
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 6000);
+      }
+    }
+
+
+    changeTextBtn.addEventListener("click", () => {
+      const current = quoteEl.textContent.replace(/"/g, "");
+      let next = quotes[Math.floor(Math.random() * quotes.length)];
+      while (next === current && quotes.length > 1) {
+        next = quotes[Math.floor(Math.random() * quotes.length)];
+      }
+      quoteEl.textContent = `"${next}"`;
+      spawnConfetti();
+    });
+  </script>
+</body>
+</html>
